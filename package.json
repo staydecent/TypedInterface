@@ -1,0 +1,24 @@
+{
+  "name": "TypedInterface",
+  "version": "0.0.0",
+  "description": "Typed Interface allows you to specify the methods and their parameter types that another Object must define.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/staydecent/TypedInterface.git"
+  },
+  "keywords": [
+    "interface",
+    "object",
+    "mixin",
+    "typed"
+  ],
+  "author": "Adrian Unger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/staydecent/TypedInterface/issues"
+  }
+}
