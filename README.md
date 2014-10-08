@@ -1,10 +1,30 @@
 TypedInterface
 ==============
 
-Typed Interface allow you to specify the methods and their parameter types that another Object must define.
+TypedInterface allows you to define the parameter types and return type that a function or method must accept. 
+
+### Usage
+
+`defineFunction`
+
+Used for wrapping functions within a given context. You can pass in the local context `this` or even `window` for globals.
+
+```javascript
+Interface.defineFunction(this, 'renderTasks', [Array], String);
+function renderTasks(tasks) {
+  return "Tasks: " + tasks.join(", ");
+}
+
+try {
+  renderTasks(1, 2);
+} catch (e) {
+  console.error(e.toString());
+  // TypeError: Mismatched argument lengths: got 2, wanted 1 
+}
+```
 
 
-## Object Example
+## Exception Examples
 
 ```javascript
 
