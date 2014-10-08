@@ -93,8 +93,8 @@
       else expectedLen += 1;
     });
 
-    if ((optionalLen && givenLen !== (optionalLen + expectedLen)) &&
-       (!optionalLen && givenLen !== expectedLen)) {
+    if ((optionalLen > 0 && givenLen !== (optionalLen + expectedLen)) ||
+       (optionalLen === 0 && givenLen !== expectedLen)) {
       throw new TypeError("Mismatched argument lengths: got " + givenLen + ", wanted " + expectedLen);
     }
 
@@ -112,7 +112,7 @@
     // return the valid return value of the original function or throw
     var rVal = func.apply(this, argVals);
     if (isMatchingArgument(rVal, rType))
-      return;
+      return rVal;
 
     throw new TypeError("Mismatched return value (got: " + typeof (rVal) + ", wanted: " + rType + ")");
   };
