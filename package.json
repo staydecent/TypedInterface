@@ -1,7 +1,7 @@
 {
   "name": "TypedInterface",
   "version": "0.1.0",
-  "description": "Typed Interface allows you to specify the methods and their parameter types that another Object must define.",
+  "description": "TypedInterface allows you to define the parameter types and return type that a function or method must accept.",
   "main": "index.js",
   "repository": {
     "type": "git",
