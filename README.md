@@ -3,11 +3,20 @@ TypedInterface
 
 TypedInterface allows you to define the parameter types and return type that a function or method must accept. 
 
-### Usage
+## Usage
 
-`defineFunction`
+### `defineFunction`
 
 Used for wrapping functions within a given context. You can pass in the local context `this` or even `window` for globals.
+
+#### Arguments
+
+- `ctx` the context (or environment, or namespace) where the function is defined.
+- `name` the name of the function
+- `argTypes` ordered array of types that the function must accept
+- `rType` The return value type
+
+#### Example
 
 ```javascript
 Interface.defineFunction(this, 'renderTasks', [Array], String);
