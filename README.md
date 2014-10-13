@@ -131,3 +131,7 @@ try {
 var out = renders.tasks(myTasks);
 console.debug(out);
 ```
+
+## Credits
+
+The original idea and proof was the work of the rather illustrious [Lewis Zimmerman](https://github.com/lzimm).
