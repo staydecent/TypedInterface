@@ -9,14 +9,14 @@ TypedInterface allows you to define the parameter types and return type that a f
 
 Used for wrapping functions within a given context. You can pass in the local context `this` or even `window` for globals.
 
-#### Arguments
+__Arguments__
 
 - `ctx` the context (or environment, or namespace) where the function is defined.
 - `name` the name of the function
 - `argTypes` ordered array of types that the function must accept
 - `rType` The return value type
 
-#### Example
+__Example__
 
 ```javascript
 Interface.defineFunction(this, 'renderTasks', [Array], String);
