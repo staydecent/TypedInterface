@@ -32,6 +32,50 @@ try {
 }
 ```
 
+### `defineMethod`
+
+Used for wrapping methods of a prototype. This allows you to define the types for each method of the prototype, and then use the `extend` method to adopt the same definitions for each instance of that prototype. Check out the example for a better explanation.
+
+__Arguments__
+
+- `cls` the class/prototype reference
+- `name` the name of the method
+- `argTypes` ordered array of types that the function must accept
+- `rType` The return value type
+
+__Example__
+
+```javascript
+// Define our Interface prototype that various other 'classes' will implement
+var ServiceClass = function(){};
+ServiceClass.prototype.login = function() {}; // no need to actually write logic here
+ServiceClass.prototype.getInputFields = function() {};
+
+Interface.defineMethod(ServiceClass, 
+    "login", [optional(Object), optional(Function)], undefined);
+
+  Interface.defineMethod(ServiceClass, 
+    "getInputFields", [Object, String, Function], undefined);
+
+// Example of a class that implements the above defined methods
+var SomeService = function(){};
+SomeService.prototype.login = function(data, cb) {
+  [...]
+};
+SomeService.prototype.getInputFields = function(data, site, cb) {
+  [...]
+};
+
+// Extend it! This will adopt the same type checks as the ServiceClass. 
+// Any method that SomeService does not implement will fallback to ServiceClass.
+// This does not create new wrappers, rather relies on the CACHED wrappers 
+// for ServiceClass.
+SomeService = Interface.extend(ServiceClass, SomeService);
+
+// And instantiate as you normally would:
+var SomeServiceInstance = new SomeService();
+```
+
 
 ## Exception Examples
 
