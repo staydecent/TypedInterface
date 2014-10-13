@@ -10,19 +10,19 @@
 
   // Additional types
 
-  window.StringOrArray = function (val) {
+  Interface.StringOrArray = function (val) {
     return val.constructor === String || val.constructor === Array;
   };
 
-  window.NumberOrArray = function (val) {
+  Interface.NumberOrArray = function (val) {
     return val.constructor === Number || val.constructor === Array;
   };
 
-  window.Promise = function (val) {
+  Interface.Promise = function (val) {
     return val.always && val.then;
   };
 
-  window.optional = function (type) {
+  Interface.optional = function (type) {
     var f = function(val) {
       if (!val) return true;
 
