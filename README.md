@@ -52,10 +52,10 @@ ServiceClass.prototype.login = function() {}; // no need to actually write logic
 ServiceClass.prototype.getInputFields = function() {};
 
 Interface.defineMethod(ServiceClass, 
-    "login", [optional(Object), optional(Function)], undefined);
+  "login", [optional(Object), optional(Function)], undefined);
 
-  Interface.defineMethod(ServiceClass, 
-    "getInputFields", [Object, String, Function], undefined);
+Interface.defineMethod(ServiceClass, 
+  "getInputFields", [Object, String, Function], undefined);
 
 // Example of a class that implements the above defined methods
 var SomeService = function(){};
