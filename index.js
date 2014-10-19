@@ -227,5 +227,5 @@
   // var testClass = new MyClass();
   // var r = testClass.test(1, {}, [1,2,3]);
 
-  global.Interface = (global.module || {}).exports = Interface;
+  global = (global.module || {}).exports = Interface;
 })(this);
