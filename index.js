@@ -163,6 +163,24 @@
     Interface.CACHE.CONTEXT[ctx][name] = cacheObj;
   };
 
+  Interface.fn = function (func, argTypes, rType) {
+    if (!func || !(func instanceof Function)) {
+      throw new TypeError("Function: " + name + " in context: " + ctx + " isn't a valid function: " + func);
+    }
+
+    var wrapped = function () {
+      return wrapper.apply(this, [arguments, argTypes, rType, func]);
+    };
+
+    var cacheObj = {
+      original: func,
+      wrapped: wrapped
+    };
+
+    Interface.CACHE.FUNCS = Interface.CACHE.FUNCS || {};
+    Interface.CACHE.FUNCS[func] = cacheObj;
+  };
+
 
   /**
    * Define types on an instance's property.
