@@ -1,4 +1,12 @@
-(function (exports) {
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    define([], factory);
+  } else if (typeof exports === 'object') {
+    module.exports = factory();
+  } else {
+    root.returnExports = factory();
+  }
+}(this, function() {
   'use strict';
 
   var Interface = {};
@@ -227,5 +235,5 @@
   // var testClass = new MyClass();
   // var r = testClass.test(1, {}, [1,2,3]);
 
-  exports = Interface;
-})(typeof exports === 'undefined' ? this['Interface'] = {} : exports);
+  return Interface;
+}));
