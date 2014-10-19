@@ -22,6 +22,10 @@
     return val.constructor === String || val.constructor === Array;
   };
 
+  Interface.StringOrObject = function (val) {
+    return val.constructor === String || val.constructor === Object;
+  };
+
   Interface.NumberOrArray = function (val) {
     return val.constructor === Number || val.constructor === Array;
   };
