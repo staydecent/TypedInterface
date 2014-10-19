@@ -1,6 +1,6 @@
 {
   "name": "typedinterface",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "TypedInterface allows you to define the parameter types and return type that a function or method must accept.",
   "main": "index.js",
   "repository": {
