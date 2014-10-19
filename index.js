@@ -1,4 +1,4 @@
-(function (global) {
+(function (exports) {
   'use strict';
 
   var Interface = {};
@@ -227,5 +227,5 @@
   // var testClass = new MyClass();
   // var r = testClass.test(1, {}, [1,2,3]);
 
-  global = (global.module || {}).exports = Interface;
-})(this);
+  exports = Interface;
+})(typeof exports === 'undefined' ? this['Interface'] = {} : exports);
