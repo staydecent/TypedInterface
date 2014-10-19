@@ -179,6 +179,8 @@
 
     Interface.CACHE.FUNCS = Interface.CACHE.FUNCS || {};
     Interface.CACHE.FUNCS[func] = cacheObj;
+
+    return wrapped;
   };
 
 
