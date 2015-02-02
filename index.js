@@ -148,7 +148,7 @@
     }
 
     var wrapped = function () {
-      return wrapper.apply(this, [arguments, argTypes, rType, func]);
+      return wrapper.apply(this, [arguments, argTypes, rType, func, name]);
     };
 
     ctx[name] = wrapped;
