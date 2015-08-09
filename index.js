@@ -43,7 +43,7 @@
   return function (func, argTypes, rType) {
     if (!func || !(func instanceof Function)) {
       noop();
-    } else if (!argTypes || argTypes.length) {
+    } else if (!argTypes || !argTypes.length) {
       noop();
     } else if (!rType) {
       noop();
