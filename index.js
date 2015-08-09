@@ -51,4 +51,8 @@
       return function() { return wrapper.apply(this, [arguments, argTypes, rType, func]); };
     }
   };
+
+  function noop() {
+    console.error('Typed..');
+  }
 }));
