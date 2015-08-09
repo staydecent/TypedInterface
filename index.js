@@ -48,7 +48,7 @@
     } else if (!rType) {
       noop();
     } else {
-      return function() { return wrapper.apply(this, [arguments, argTypes, rType, func]);
+      return function() { return wrapper.apply(this, [arguments, argTypes, rType, func]); };
     }
   };
 }));
